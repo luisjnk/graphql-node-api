@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/luisjnk/graphql-node-api#readme",
   "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-clean": "0.3.2",
+    "gulp-typescript": "3.2.2",
     "typescript": "2.5.3"
   }
 }
