@@ -10,18 +10,22 @@ gulp.task('scripts', ['static'], () => {
 
     return tsResult.js
         .pipe(gulp.dest('dist'));
-})
+});
 
 gulp.task('static', ['clean'], () => {
     return gulp
         .src(['src/**/*.json'])
         .pipe(gulp.dest('dist'));
-})
+});
 
 gulp.task('clean', () => {
     return gulp
         .src('dist')
         .pipe(clean());
-})
+});
 
-gulp.task('build', ['clean', 'static', 'scripts'])
+gulp.task('build', ['clean', 'static', 'scripts']);
+
+gulp.task('watch', ['build'], () => {
+    return gulp.watch(['src/**/*.ts', 'src/**/*.json', ['build']]);
+});
