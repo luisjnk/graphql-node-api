@@ -5,13 +5,18 @@ class App {
 
     constructor() {
         this.express = express();
+        this.middleware();
     }
 
     private middleware(): void {
-        this.express.use('/hello', (req: express.Request, res: express.Response, next: express.NextFunction){
+        this.express.use('/hello', (req: express.Request, res: express.Response, next: express.NextFunction) => {
             res.send({
                 hello: "Hello World!"
             })
         })
+
     }
 }
+
+export default new App().express;
+
